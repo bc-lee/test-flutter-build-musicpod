@@ -19,12 +19,14 @@ jobs:
       image: debian:${{ matrix.os }}
 
     steps:
-      - name: Install jq
+      - name: Install basic dependencies
         run: |
           export DEBIAN_FRONTEND=noninteractive
           apt update
           apt install -y \
             bash curl file git coreutils zip unzip which xz-utils jq
+          
+          git config --global --add safe.directory '*'
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
