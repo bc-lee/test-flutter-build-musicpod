@@ -13,6 +13,7 @@ jobs:
       matrix:
         os: [bookworm, trixie]
         flutter: [3.19.6, 3.22.0]
+      fail-fast: false
 
     container:
       image: debian:${{ matrix.os }}
