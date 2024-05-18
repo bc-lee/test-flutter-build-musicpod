@@ -23,7 +23,7 @@ jobs:
           export DEBIAN_FRONTEND=noninteractive
           apt update
           apt install -y \
-            jq
+            bash curl file git coreutils zip unzip which xz-utils jq
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -35,7 +35,6 @@ jobs:
         run: |
           export DEBIAN_FRONTEND=noninteractive
           apt install -y \
-            bash curl file git coreutils zip unzip which xz-utils \  
             clang cmake ninja-build pkg-config libgtk-3-dev \
             libmpv-dev
 
